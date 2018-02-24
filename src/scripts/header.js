@@ -1,4 +1,5 @@
 import React from 'react';
+import { withStyles } from 'material-ui/styles';
 
 import AppBar from 'material-ui/AppBar';
 import Grid from 'material-ui/Grid';
@@ -6,6 +7,12 @@ import Tabs, { Tab } from 'material-ui/Tabs';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import { FormatListBulleted, Magnify, Settings } from 'mdi-material-ui';
+
+const styles = theme => ({
+  fillY: {
+    ...theme.mixins.toolbar
+  }
+});
 
 class Header extends React.Component {
 
@@ -16,6 +23,9 @@ class Header extends React.Component {
   };
 
   render() {
+
+    const { classes } = this.props;
+
     return (
       <AppBar>
         <Toolbar>
@@ -24,10 +34,12 @@ class Header extends React.Component {
               <Typography color="inherit" variant="title">BackTube</Typography>
             </Grid>
             <Grid item>
-              <Tabs onChange={this.changeTab} value={this.state.currentTab}>
-                <Tab icon={<Magnify />} value="search"></Tab>
-                <Tab icon={<FormatListBulleted />} value="lists"></Tab>
-                <Tab icon={<Settings />} value="settings"></Tab>
+              <Tabs classes={{root: classes.fillY}}
+                    onChange={this.changeTab}
+                    value={this.state.currentTab}>
+                <Tab classes={{root: classes.fillY}} icon={<Magnify />} value="search"></Tab>
+                <Tab classes={{root: classes.fillY}} icon={<FormatListBulleted />} value="lists"></Tab>
+                <Tab classes={{root: classes.fillY}} icon={<Settings />} value="settings"></Tab>
               </Tabs>
             </Grid>
           </Grid>
@@ -37,4 +49,4 @@ class Header extends React.Component {
   }
 }
 
-export default Header;
+export default withStyles(styles)(Header);
