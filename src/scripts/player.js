@@ -1,4 +1,5 @@
 import React from 'react';
+import { withStyles } from 'material-ui/styles';
 
 import AppBar from 'material-ui/AppBar';
 import Grid from 'material-ui/Grid';
@@ -8,17 +9,18 @@ import PlayerArt from './player.art';
 import PlayerControls from './player.controls';
 import PlayerProgress from './player.progress';
 
+const styles = theme => ({
+  positionFixed: {
+    bottom: 0,
+    top: 'auto'
+  }
+});
+
 class Player extends React.Component {
   render() {
-
-    const styles = {
-      bottom: 0,
-      flexDirection: 'row',
-      top: 'auto'
-    };
-
+    const { classes } = this.props;
     return (
-      <AppBar className="player" component="footer" style={styles}>
+      <AppBar classes={{positionFixed: classes.positionFixed}} component="footer">
         <Grid container spacing={0}>
 
           <Grid item>
@@ -44,4 +46,4 @@ class Player extends React.Component {
   }
 }
 
-export default Player;
+export default withStyles(styles)(Player);

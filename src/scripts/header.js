@@ -9,7 +9,7 @@ import Typography from 'material-ui/Typography';
 import { FormatListBulleted, Magnify, Settings } from 'mdi-material-ui';
 
 const styles = theme => ({
-  root: {
+  fillY: {
     ...theme.mixins.toolbar
   }
 });
@@ -24,6 +24,7 @@ class Header extends React.Component {
 
   render() {
     const { classes } = this.props;
+    const { currentTab } = this.state;
     return (
       <AppBar>
         <Toolbar>
@@ -32,12 +33,10 @@ class Header extends React.Component {
               <Typography color="inherit" variant="title">BackTube</Typography>
             </Grid>
             <Grid item>
-              <Tabs classes={classes}
-                    onChange={this.changeTab}
-                    value={this.state.currentTab}>
-                <Tab classes={classes} icon={<Magnify />} value="search"></Tab>
-                <Tab classes={classes} icon={<FormatListBulleted />} value="lists"></Tab>
-                <Tab classes={classes} icon={<Settings />} value="settings"></Tab>
+              <Tabs classes={{root: classes.fillY}} onChange={this.changeTab} value={currentTab}>
+                <Tab classes={{root: classes.fillY}} icon={<Magnify />} value="search"></Tab>
+                <Tab classes={{root: classes.fillY}} icon={<FormatListBulleted />} value="lists"></Tab>
+                <Tab classes={{root: classes.fillY}} icon={<Settings />} value="settings"></Tab>
               </Tabs>
             </Grid>
           </Grid>
