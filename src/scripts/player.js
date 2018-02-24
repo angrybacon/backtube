@@ -2,10 +2,11 @@ import React from 'react';
 
 import AppBar from 'material-ui/AppBar';
 import Grid from 'material-ui/Grid';
-import IconButton from 'material-ui/IconButton';
-import { LinearProgress } from 'material-ui/Progress';
 import Typography from 'material-ui/Typography';
-import { Play, SkipNext, SkipPrevious } from 'mdi-material-ui';
+
+import PlayerArt from './player.art';
+import PlayerControls from './player.controls';
+import PlayerProgress from './player.progress';
 
 class Player extends React.Component {
   render() {
@@ -39,66 +40,6 @@ class Player extends React.Component {
           </Grid>
         </Grid>
       </AppBar>
-    );
-  }
-}
-
-class PlayerArt extends React.Component {
-  render() {
-    return (
-      <div className="player-art">
-        <img className="player-art-image" alt="" src="https://placecage.com/250/150" />
-      </div>
-    );
-  }
-}
-
-class PlayerControls extends React.Component {
-  render() {
-    return (
-      <div>
-        <IconButton color="inherit"><SkipPrevious /></IconButton>
-        <IconButton color="inherit"><Play /></IconButton>
-        <IconButton color="inherit"><SkipNext /></IconButton>
-      </div>
-    );
-  }
-}
-
-class PlayerProgress extends React.Component {
-
-  state = {completed: 0};
-  timer = null;
-
-  componentDidMount() {
-    this.timer = setInterval(this.progress, 500);
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.timer);
-  }
-
-  progress = () => {
-    const { completed } = this.state;
-    if (completed === 100) {
-      this.setState({ completed: 0 });
-    }
-    else {
-      const diff = Math.random() * 10;
-      this.setState({ completed: Math.min(completed + diff, 100) });
-    }
-  };
-
-  render() {
-    return (
-      <div style={{position: 'relative'}}>
-        <LinearProgress
-          color="secondary"
-          style={{left: 0, position: 'absolute', right: 0, top: 0}}
-          value={this.state.completed}
-          variant="determinate"
-          />
-      </div>
     );
   }
 }
