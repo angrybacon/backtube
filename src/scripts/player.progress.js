@@ -1,6 +1,20 @@
 import React from 'react';
+import { withStyles } from 'material-ui/styles';
 
 import { LinearProgress } from 'material-ui/Progress';
+
+const styles = {
+  root: {
+    height: 4,
+    left: 0,
+    position: 'absolute',
+    right: 0,
+    top: 0
+  },
+  dashed: {
+    display: 'none'
+  }
+};
 
 class PlayerProgress extends React.Component {
 
@@ -23,12 +37,13 @@ class PlayerProgress extends React.Component {
   };
 
   render() {
+    const { classes } = this.props;
     const { buffer, completed } = this.state;
     return (
       <div style={{position: 'relative'}}>
         <LinearProgress
+          classes={classes}
           color="secondary"
-          style={{left: 0, position: 'absolute', right: 0, top: 0}}
           value={completed}
           valueBuffer={buffer}
           variant="buffer"
@@ -38,4 +53,4 @@ class PlayerProgress extends React.Component {
   }
 }
 
-export default PlayerProgress;
+export default withStyles(styles)(PlayerProgress);
