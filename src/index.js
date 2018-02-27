@@ -8,12 +8,11 @@ import 'typeface-roboto';
 import './index.css';
 
 function Popin() {
-  return (
-    <div>
-      <Header />
-      <Player />
-    </div>
-  );
+  return [
+    <Header />,
+    <p>asdf</p>,
+    <Player />
+  ];
 }
 
 const root = document.getElementById('root');
