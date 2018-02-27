@@ -26,7 +26,7 @@ class Header extends React.Component {
     const { classes } = this.props;
     const { currentTab } = this.state;
     return (
-      <AppBar>
+      <AppBar component="div" position="static">
         <Toolbar>
           <Grid container alignItems="center" justify="space-between">
             <Grid item>
