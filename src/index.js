@@ -10,7 +10,7 @@ import './index.css';
 
 function Popin() {
   return (
-    <Grid container direction="column" spacing={0} wrap="nowrap">
+    <Grid container direction="column" spacing={0} style={{minWidth: 400}} wrap="nowrap">
       <Grid item component="header"><Header /></Grid>
       <Grid item style={{overflowY: 'auto', flexShrink: 1}}></Grid>
       <Grid item component="footer"><Player /></Grid>

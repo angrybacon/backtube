@@ -4,3 +4,7 @@ body, html, #root, #root > div {
   overflow: hidden;
   padding: 0;
 }
+
+#root {
+  overflow-x: auto;
+}
