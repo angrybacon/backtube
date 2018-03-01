@@ -12,7 +12,7 @@ function Popin() {
   return (
     <Grid container direction="column" spacing={0} style={{minWidth: 400}} wrap="nowrap">
       <Grid item component="header"><Header /></Grid>
-      <Grid item style={{overflowY: 'auto', flexShrink: 1}}></Grid>
+      <Grid item style={{flexShrink: 1, height: '100%', overflowY: 'auto'}}></Grid>
       <Grid item component="footer"><Player /></Grid>
     </Grid>
   );
