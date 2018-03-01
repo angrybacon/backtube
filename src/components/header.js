@@ -1,11 +1,6 @@
 import React from 'react';
-import { withStyles } from 'material-ui/styles';
 
-import AppBar from 'material-ui/AppBar';
-import Grid from 'material-ui/Grid';
-import Tabs, { Tab } from 'material-ui/Tabs';
-import Toolbar from 'material-ui/Toolbar';
-import Typography from 'material-ui/Typography';
+import { AppBar, Grid, Tab, Tabs, Toolbar, Typography, withStyles } from 'material-ui';
 import { FormatListBulleted, Magnify, Settings } from 'mdi-material-ui';
 
 const styles = theme => ({
@@ -24,7 +19,7 @@ class Header extends React.Component {
 
   render() {
     const { classes } = this.props;
-    const { currentTab } = this.state;
+    let { currentTab } = this.state;
     return (
       <AppBar component="div" position="static">
         <Toolbar>
@@ -46,4 +41,4 @@ class Header extends React.Component {
   }
 }
 
-export default withStyles(styles)(Header);
+export default withRouter(withStyles(styles)(Header));

@@ -1,7 +1,7 @@
 import React from 'react';
 
+import { IconButton } from 'material-ui';
 import { Play, SkipNext, SkipPrevious } from 'mdi-material-ui';
-import IconButton from 'material-ui/IconButton';
 
 class PlayerControls extends React.Component {
   render() {

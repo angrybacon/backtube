@@ -1,12 +1,8 @@
 import React from 'react';
 
-import AppBar from 'material-ui/AppBar';
-import Grid from 'material-ui/Grid';
-import Toolbar from 'material-ui/Toolbar';
-import Typography from 'material-ui/Typography';
+import { AppBar, Grid, Toolbar, Typography } from 'material-ui';
 
-import PlayerControls from './player.controls';
-import PlayerProgress from './player.progress';
+import { PlayerControls, PlayerProgress } from '.';
 
 class Player extends React.Component {
   render() {

@@ -1,9 +1,9 @@
 import React from 'react';
 import { render } from 'react-dom';
-import Grid from 'material-ui/Grid';
 
-import Header from './scripts/header';
-import Player from './scripts/player';
+import { Grid } from 'material-ui';
+
+import { Header, Player } from './components';
 
 import 'typeface-roboto';
 import './index.css';

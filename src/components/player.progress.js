@@ -1,7 +1,6 @@
 import React from 'react';
-import { withStyles } from 'material-ui/styles';
 
-import { LinearProgress } from 'material-ui/Progress';
+import { LinearProgress, withStyles } from 'material-ui';
 
 const styles = {
   root: {
